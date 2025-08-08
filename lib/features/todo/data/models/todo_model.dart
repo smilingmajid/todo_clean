@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 import '../../domin/entities/todo_entity.dart';
 
 
-part 'todo_model.g.dart';
+part '../datasources/todo_model.g.dart';
 
 @HiveType(typeId: 0)
 class TodoModel extends TodoEntity {
