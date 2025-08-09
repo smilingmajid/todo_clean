@@ -1,11 +1,10 @@
-// ignore_for_file: overridden_fields
+
 
 import 'package:hive/hive.dart';
 
 import '../../domin/entities/todo_entity.dart';
 
-
-part '../datasources/todo_model.g.dart';
+part 'todo_model.g.dart';
 
 @HiveType(typeId: 0)
 class TodoModel extends TodoEntity {
