@@ -1,7 +1,6 @@
 import 'package:hive/hive.dart';
 
-import '../../domin/entities/todo_entity.dart';
-
+import '../../../../core/entities/todo_entity.dart';
 
 part 'todo_model.g.dart';
 
