@@ -1,5 +1,7 @@
 import 'package:todo_clean/features/add_todo/domin/repositories/add_todo_repository.dart';
-import '../entities/todo_entity.dart';
+
+import '../../../../core/entities/todo_entity.dart';
+
 
 class AddTodoUseCase {
   final AddTodoRepository repository;

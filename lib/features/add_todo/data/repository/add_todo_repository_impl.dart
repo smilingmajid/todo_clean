@@ -1,4 +1,5 @@
-import '../../domin/entities/todo_entity.dart';
+
+import '../../../../core/entities/todo_entity.dart';
 import '../../domin/repositories/add_todo_repository.dart';
 import '../datasource/todo_local_datasource.dart';
 import '../models/todo_model.dart';
