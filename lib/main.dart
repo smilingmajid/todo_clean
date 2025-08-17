@@ -5,7 +5,6 @@ import 'package:todo_clean/di/feature_binding.dart';
 import 'features/add_todo/data/models/todo_model.dart';
 import 'features/show_todo/presentation/pages/show_todo_page.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
@@ -14,6 +13,7 @@ void main() async {
 
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       initialBinding: FeatureBinding(),
       home: ShowTodoPage(),
     ),
