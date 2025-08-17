@@ -10,14 +10,17 @@ part 'todo_model.g.dart';
 class TodoModel extends TodoEntity {
   @override
   @HiveField(0)
+  // ignore: overridden_fields
   final String id;
 
   @override
   @HiveField(1)
+  // ignore: overridden_fields
   final String title;
 
   @override
   @HiveField(2)
+  // ignore: overridden_fields
   final bool isDone;
 
   TodoModel({required this.id, required this.title, this.isDone = false})

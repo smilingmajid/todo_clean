@@ -5,6 +5,8 @@ import '../controllers/todo_controller.dart';
 class TodoPage extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
 
+  TodoPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final todoCtrl = Get.find<TodoController>();
