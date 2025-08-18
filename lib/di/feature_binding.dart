@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:todo_clean/controller/theme_controller.dart';
 
 import '../features/add_todo/data/datasource/todo_local_datasource.dart'
     as add_ds;
@@ -34,5 +35,7 @@ class FeatureBinding extends Bindings {
       ),
       fenix: true,
     );
+
+    Get.lazyPut(() => ThemeController(), fenix: true);
   }
 }
