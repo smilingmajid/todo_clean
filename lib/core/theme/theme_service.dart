@@ -4,23 +4,28 @@ import 'package:flutter/material.dart';
 
 ///This file is for save theme data on Hive
 
-class ThemeService extends GetxController {
-  static const themeKey = 'isDarkMode';
-  late Box box;
-  RxBool isDark = false.obs;
 
-  @override
-  void onInit() {
-    box = Hive.box('settings');
-    isDark.value = box.get(themeKey, defaultValue: false);
-    super.onInit();
+class ThemeService {
+  final String _boxName = "themeBox";
+  final String _key = "isDark";
+
+  // Save mode
+  Future<void> saveTheme(bool isDark) async {
+    var box = await Hive.openBox(_boxName);
+    await box.put(_key, isDark);
   }
 
-  ThemeMode get theme => isDark.value ? ThemeMode.dark : ThemeMode.light;
+  // Load mode
+  Future<bool> loadTheme() async {
+    var box = await Hive.openBox(_boxName);
+    return box.get(_key, defaultValue: true); // default mode is Dark
+  }
 
-  void switchTheme() {
-    isDark.value = !isDark.value;
-    box.put(themeKey, isDark.value);
-    Get.changeThemeMode(theme);
+  // Change Mode
+  Future<void> switchTheme() async {
+    bool isDark = await loadTheme();
+    await saveTheme(!isDark);
+    Get.changeThemeMode(isDark ? ThemeMode.light : ThemeMode.dark);
   }
 }
+
