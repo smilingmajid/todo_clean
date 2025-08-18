@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_clean/di/feature_binding.dart';
+import 'package:todo_clean/features/home/presentation/page/home_page.dart';
 import 'features/add_todo/data/models/todo_model.dart';
-import 'features/show_todo/presentation/pages/show_todo_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +15,8 @@ void main() async {
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: FeatureBinding(),
-      home: ShowTodoPage(),
+      home: HomePage(),
+     
     ),
   );
 }
