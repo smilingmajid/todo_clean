@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../core/theme/theme_service.dart';
 
 class ThemeController extends GetxController {
-  var isDark = false.obs;
+  var isDark = true.obs;
   final ThemeService _themeService = ThemeService();
 
   @override
