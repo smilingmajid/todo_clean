@@ -10,13 +10,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark=Get.find<ThemeController>().isDark.value;
-    return Scaffold(
-     backgroundColor: isDark?AppColor().darkModeColors[0]:AppColor().lightModeColors[0],
-      body: Column(
-        children: [
-          const Text('home screen'),
-        ],
-      )
+    return SafeArea(
+      child: Scaffold(
+       backgroundColor: isDark?AppColor().darkModeColors[0]:AppColor().lightModeColors[0],
+        body: Column(
+          children: [
+            const Text('home screen'),
+          ],
+        )
+      ),
     );
   }
 }
