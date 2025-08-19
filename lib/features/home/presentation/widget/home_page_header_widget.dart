@@ -7,10 +7,13 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
     children: [
       IconButton(
         onPressed: onPressed,
-        icon: Icon(Iconsax.menu_1, color: isDark ? Colors.white : Colors.black),
+        icon: Icon(
+          isDark ? Iconsax.sun_1 : Iconsax.moon,
+          color: isDark ? Colors.white : Colors.black,
+        ),
       ),
       Spacer(),
-       const Text('home screen'),
+      const Text('home screen'),
       /*
       textWidget(
         isDark: isDark,
