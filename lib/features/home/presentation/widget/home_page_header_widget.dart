@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:random_avatar/random_avatar.dart';
+import '../../../../core/widgets/text_widget.dart';
 
 Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
   return Row(
@@ -13,14 +14,13 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
         ),
       ),
       Spacer(),
-      const Text('home screen'),
-      /*
+
       textWidget(
         isDark: isDark,
-        txt: 'HomeScreen.AppBar'.tr,
+        txt: 'Home Screen',
         fontSize: 15,
-        fontWeight: FontWeight.w400,
-      ),*/
+        fontWeight: FontWeight.w500,
+      ),
       Spacer(),
       RandomAvatar('saytoonz', height: 50, width: 50),
     ],
