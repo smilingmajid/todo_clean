@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../controller/theme_controller.dart';
 import '../../../../core/theme/app_color.dart';
 import '../controller/home_controller.dart';
+import '../widget/home_page_header_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,15 +12,30 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
+    final themeController = Get.find<ThemeController>();
 
     return Obx(() {
       return Scaffold(
-        backgroundColor: AppColor().lightModeColors[0],
-        body: ListView.builder(
-          itemCount: controller.projects.length,
-          itemBuilder: (context, index) {
-            return ListTile(title: Text(controller.projects[index].name));
-          },
+        backgroundColor: themeController.isDark.value
+            ? AppColor().darkModeColors[0]
+            : AppColor().lightModeColors[0],
+        body: Column(
+          children: [
+            homePageHeaderWidget(
+              themeController.isDark.value,
+              onPressed: () {
+                themeController.changeTheme();
+              },
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: controller.projects.length,
+                itemBuilder: (context, index) {
+                  return ListTile(title: Text(controller.projects[index].name));
+                },
+              ),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
