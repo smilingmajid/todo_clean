@@ -10,6 +10,7 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
         icon: Icon(Iconsax.menu_1, color: isDark ? Colors.white : Colors.black),
       ),
       Spacer(),
+       const Text('home screen'),
       /*
       textWidget(
         isDark: isDark,
