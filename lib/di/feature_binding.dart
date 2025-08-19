@@ -11,6 +11,7 @@ import '../features/add_todo/data/repository/add_todo_repository_impl.dart';
 import '../features/add_todo/domin/usecases/add_todo_usecase.dart';
 import '../features/add_todo/presentation/controllers/add_todo_controller.dart';
 
+import '../features/home/presentation/controller/home_controller.dart';
 import '../features/project/data/datasources/project_local_datasource.dart';
 import '../features/project/data/repositories/project_repository_impl.dart';
 import '../features/project/domin/usecase/add_project_usecase.dart';
@@ -31,7 +32,11 @@ class FeatureBinding extends Bindings {
     final local = ProjectLocalDataSourceImpl(boxx);
     final repository = ProjectRepositoryImpl(local);
     final usecase = AddProjectUseCase(repository);
+
+    
     Get.put(HomeController(usecase));
+
+
     Get.lazyPut(
       () => AddTodoController(AddTodoUseCase(AddTodoRepositoryImpl(addLocal))),
       fenix: true,
