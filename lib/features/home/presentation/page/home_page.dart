@@ -47,11 +47,16 @@ class HomePage extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             String name = '';
+            final themeController = Get.find<ThemeController>();
             showDialog(
               context: context,
               builder:
                   (_) => AlertDialog(
-                    title: Text('New Project'),
+                    title: textWidget(
+                      isDark: themeController.isDark.value,
+                      txt: 'Project.addProject'.tr,
+                      fontSize: 15,
+                    ),
                     content: TextField(onChanged: (value) => name = value),
                     actions: [
                       TextButton(
@@ -59,7 +64,11 @@ class HomePage extends StatelessWidget {
                           if (name.isNotEmpty) controller.addProject(name);
                           Get.back();
                         },
-                        child: Text('Add'),
+                        child: textWidget(
+                          isDark: themeController.isDark.value,
+                          txt: 'Project.add'.tr,
+                          fontSize: 15,
+                        ),
                       ),
                     ],
                   ),
