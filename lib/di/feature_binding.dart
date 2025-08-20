@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:todo_clean/controller/theme_controller.dart';
+import 'package:todo_clean/core/translations/language_controller.dart';
 import 'package:todo_clean/features/project/data/models/project_model.dart';
 
 import '../features/add_todo/data/datasource/todo_local_datasource.dart'
@@ -28,14 +29,13 @@ class FeatureBinding extends Bindings {
 
     final addLocal = add_ds.TodoLocalDataSourceImpl(box);
     final showLocal = show_ds.TodoLocalDataSourceImpl(box);
-   final boxx = Hive.box<ProjectModel>('projects');
+    final boxx = Hive.box<ProjectModel>('projects');
     final local = ProjectLocalDataSourceImpl(boxx);
     final repository = ProjectRepositoryImpl(local);
     final usecase = AddProjectUseCase(repository);
 
-    
     Get.put(HomeController(usecase));
-
+    Get.lazyPut(() => LanguageController(), fenix: true);
 
     Get.lazyPut(
       () => AddTodoController(AddTodoUseCase(AddTodoRepositoryImpl(addLocal))),
