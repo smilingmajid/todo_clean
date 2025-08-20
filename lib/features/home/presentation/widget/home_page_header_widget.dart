@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:random_avatar/random_avatar.dart';
 import '../../../../core/widgets/text_widget.dart';
@@ -17,7 +18,7 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
 
       textWidget(
         isDark: isDark,
-        txt: 'Home Screen',
+        txt: 'HomeScreen.AppBar'.tr,
         fontSize: 15,
         fontWeight: FontWeight.w500,
       ),
