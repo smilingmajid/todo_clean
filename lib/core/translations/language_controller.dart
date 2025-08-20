@@ -3,17 +3,34 @@ import 'package:flutter/material.dart';
 import '../models/language_model.dart';
 
 class LanguageController extends GetxController {
-  var selectedLang = Language(
-    name: 'English',
-    locale: Locale('en', 'US'),
-    flag: 'assets/images/us.png',
-  ).obs;
+  var selectedLang =
+      Language(
+        name: 'English',
+        locale: Locale('en', 'US'),
+        flag: 'assets/images/us.png',
+      ).obs;
 
-  final List<Language> languages =  [
-    Language(name: 'English', locale: Locale('en', 'US'), flag: 'assets/images/us.png'),
-    Language(name: 'Deutsch', locale: Locale('de', 'DE'), flag: 'assets/images/de.png'),
-    Language(name: 'فارسی', locale: Locale('fa', 'IR'), flag: 'assets/images/ir.png'),
-    Language(name: 'العربية', locale: Locale('ar', 'SA'), flag: 'assets/images/sa.png'),
+  final List<Language> languages = [
+    Language(
+      name: 'English',
+      locale: Locale('en', 'US'),
+      flag: 'assets/image/us.png',
+    ),
+    Language(
+      name: 'Deutsch',
+      locale: Locale('de', 'DE'),
+      flag: 'assets/image/de.png',
+    ),
+    Language(
+      name: 'فارسی',
+      locale: Locale('fa', 'IR'),
+      flag: 'assets/image/ir.png',
+    ),
+    Language(
+      name: 'العربية',
+      locale: Locale('ar', 'SA'),
+      flag: 'assets/image/sa.png',
+    ),
   ];
 
   void changeLanguage(Language lang) {
