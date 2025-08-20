@@ -2,36 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LanguageController extends GetxController {
-  var selectedLang = <String, Object>{
+  var selectedLang = <String, dynamic>{
     'name': 'English',
     'locale': const Locale('en', 'US'),
-    'flag': 'image/us.png',
+    'flag': 'assets/images/us.png',
   }.obs;
 
-  final List<Map<String, Object>> languages = [
+  final List<Map<String, dynamic>> languages = [
     {
       'name': 'English',
       'locale': const Locale('en', 'US'),
-      'flag': 'image/us.png',
+      'flag': 'assets/images/us.png',
     },
     {
       'name': 'Deutsch',
       'locale': const Locale('de', 'DE'),
-      'flag': 'image/de.png',
+      'flag': 'assets/images/de.png',
     },
     {
       'name': 'فارسی',
       'locale': const Locale('fa', 'IR'),
-      'flag': 'image/ir.png',
+      'flag': 'assets/images/ir.png',
     },
     {
       'name': 'العربية',
       'locale': const Locale('ar', 'SA'),
-      'flag': 'image/sa.png',
+      'flag': 'assets/images/sa.png',
     },
   ];
 
-  void changeLanguage(Map<String, Object> lang) {
+  void changeLanguage(Map<String, dynamic> lang) {
     selectedLang.value = lang;
     Get.updateLocale(lang['locale'] as Locale);
   }
