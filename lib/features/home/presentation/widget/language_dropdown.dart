@@ -31,7 +31,7 @@ class LanguageDropdown extends StatelessWidget {
                             : 0,
                     left:
                         (lang.locale.languageCode == 'en' ||
-                                lang.locale.languageCode == 'de')
+                               lang.locale.languageCode == 'de')
                             ? 8
                             : 0,
                   ),
