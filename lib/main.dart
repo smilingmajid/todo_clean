@@ -7,6 +7,7 @@ import 'core/translations/app_translations.dart';
 import 'features/add_todo/data/models/todo_model.dart';
 import 'core/theme/theme_service.dart';
 import 'features/project/data/models/project_model.dart';
+import 'features/translation/data/datasource/hive_translate_datasource.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,8 @@ void main() async {
   final themeService = ThemeService();
     Hive.registerAdapter(ProjectModelAdapter());
   await Hive.openBox<ProjectModel>('projects');
+    final repo = HiveTranslateRepository();
+  await repo.init();
 
 
   runApp(
