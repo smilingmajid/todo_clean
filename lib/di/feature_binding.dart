@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:todo_clean/controller/theme_controller.dart';
-import 'package:todo_clean/core/translations/language_controller.dart';
 import 'package:todo_clean/features/project/data/models/project_model.dart';
-
 import '../features/add_todo/data/datasource/todo_local_datasource.dart'
     as add_ds;
 import '../features/add_todo/data/models/todo_model.dart';
@@ -47,7 +45,7 @@ class FeatureBinding extends Bindings {
     );
 
     Get.put(HomeController(usecase));
-    Get.lazyPut(() => LanguageController(), fenix: true);
+
 
     
 
