@@ -21,6 +21,10 @@ import '../features/show_todo/data/datasources/todo_local_datasource.dart'
 import '../features/show_todo/data/repositories/show_todo_repository_impl.dart';
 import '../features/show_todo/domin/usecases/get_todos_usecase.dart';
 import '../features/show_todo/presentation/controllers/show_todo_controller.dart';
+import '../features/translation/data/datasource/hive_translate_datasource.dart';
+import '../features/translation/domin/usecases/change_language.dart';
+import '../features/translation/domin/usecases/get_current_language.dart';
+import '../features/translation/presentation/controller/translate_controller.dart';
 
 class FeatureBinding extends Bindings {
   @override
@@ -33,9 +37,19 @@ class FeatureBinding extends Bindings {
     final local = ProjectLocalDataSourceImpl(boxx);
     final repository = ProjectRepositoryImpl(local);
     final usecase = AddProjectUseCase(repository);
+      final transitionRepository = HiveTranslateRepository();
+    Get.lazyPut(()=>
+      TranslateController(
+        getCurrentLanguage: GetCurrentLanguage(transitionRepository),
+        changeLanguageUseCase: ChangeLanguage(transitionRepository),
+      ),
+      fenix: true,
+    );
 
     Get.put(HomeController(usecase));
     Get.lazyPut(() => LanguageController(), fenix: true);
+
+    
 
     Get.lazyPut(
       () => AddTodoController(AddTodoUseCase(AddTodoRepositoryImpl(addLocal))),
