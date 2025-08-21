@@ -9,10 +9,26 @@ class HiveTranslateRepository implements TranslateRepository {
   static const String keyCountryCode = "country_code";
 
   final List<Language> supportedLanguages = [
-    Language(name: 'English', locale: const Locale('en', 'US'), flag: 'assets/images/us.png'),
-    Language(name: 'Deutsch', locale: const Locale('de', 'DE'), flag: 'assets/images/de.png'),
-    Language(name: 'فارسی', locale: const Locale('fa', 'IR'), flag: 'assets/images/ir.png'),
-    Language(name: 'العربية', locale: const Locale('ar', 'SA'), flag: 'assets/images/sa.png'),
+    Language(
+      name: 'English',
+      locale: const Locale('en', 'US'),
+      flag: 'assets/image/us.png',
+    ),
+    Language(
+      name: 'Deutsch',
+      locale: const Locale('de', 'DE'),
+      flag: 'assets/image/de.png',
+    ),
+    Language(
+      name: 'فارسی',
+      locale: const Locale('fa', 'IR'),
+      flag: 'assets/image/ir.png',
+    ),
+    Language(
+      name: 'العربية',
+      locale: const Locale('ar', 'SA'),
+      flag: 'assets/image/sa.png',
+    ),
   ];
 
   @override
@@ -23,7 +39,9 @@ class HiveTranslateRepository implements TranslateRepository {
 
     if (langCode != null && countryCode != null) {
       return supportedLanguages.firstWhere(
-        (lang) => lang.locale.languageCode == langCode && lang.locale.countryCode == countryCode,
+        (lang) =>
+            lang.locale.languageCode == langCode &&
+            lang.locale.countryCode == countryCode,
         orElse: () => supportedLanguages.first,
       );
     }
