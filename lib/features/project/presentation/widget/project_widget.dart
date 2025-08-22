@@ -1,11 +1,12 @@
 
 
 import 'package:flutter/material.dart';
+import '/features/home/presentation/controller/home_controller.dart';
 
 import '../../../../core/widgets/text_widget.dart';
 
-Widget projectWidget(projectController, isDark, bool isRtl) {
-  final stats = projectController.getProjectStats();
+Widget projectWidget(HomeController homeController, isDark, bool isRtl) {
+  //final stats = projectController.getProjectStats();
 
   return Column(
     children: [
@@ -17,13 +18,14 @@ Widget projectWidget(projectController, isDark, bool isRtl) {
             childAspectRatio: 2,
             mainAxisSpacing: 15,
           ),
-          itemCount: projectController.projectList.length,
+          itemCount: homeController.projects.length,
           itemBuilder: (context, index) {
-            final project = projectController.projectList[index];
+            final project = homeController.projects[index];
+/*
             final projectStats = stats[project.id] ?? {'total': 0, 'done': 0};
             final total = projectStats['total'];
             final done = projectStats['done'];
-
+*/
             return GestureDetector(
               onTap: () async {
                 /*
