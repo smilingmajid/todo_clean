@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 part 'project_model.g.dart';
@@ -7,5 +8,13 @@ class ProjectModel extends HiveObject {
   @HiveField(0)
   final String name;
 
-  ProjectModel(this.name);
+  @HiveField(1)
+  final int colorValue;
+
+  ProjectModel({
+    required this.name,
+    required this.colorValue,
+  });
+
+  Color get color => Color(colorValue);
 }
