@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../../../project/data/models/project_model.dart';
 import '../../../project/domin/usecase/add_project_usecase.dart';
 
@@ -16,7 +15,7 @@ class HomeController extends GetxController {
   }
 
   void addProject(String name) async {
-    final project = ProjectModel(name);
+    final project = ProjectModel(name,);
     await addProjectUseCase(project);
     projects.add(project);
   }
