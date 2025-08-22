@@ -12,15 +12,16 @@ import 'features/translation/data/datasource/hive_translate_datasource.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+
   Hive.registerAdapter(TodoModelAdapter());
+  Hive.registerAdapter(ProjectModelAdapter());
+
   await Hive.openBox<TodoModel>('todos');
+  await Hive.openBox<ProjectModel>('projects');
   await Hive.openBox('themeBox');
   final themeService = ThemeService();
-    Hive.registerAdapter(ProjectModelAdapter());
-  await Hive.openBox<ProjectModel>('projects');
-    final repo = HiveTranslateRepository();
-  await repo.init();
-
+  final translateRepo = HiveTranslateRepository();
+  await translateRepo.init();
 
   runApp(
     GetMaterialApp(
@@ -30,8 +31,9 @@ void main() async {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      themeMode: await themeService.loadTheme() ? ThemeMode.dark : ThemeMode.light,
-      initialBinding: FeatureBinding(),
+      themeMode:
+          await themeService.loadTheme() ? ThemeMode.dark : ThemeMode.light,
+      initialBinding: FeatureBinding(translateRepo), 
       home: HomePage(),
     ),
   );
