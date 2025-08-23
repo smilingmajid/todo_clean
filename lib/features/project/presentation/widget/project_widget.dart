@@ -69,23 +69,24 @@ Widget projectWidget(HomeController homeController, isDark, bool isRtl) {
                             textWidget(
                               isBottom: true,
                               isDark: false,
-                              txt: project.title,
+                              txt: project.name,
                               fontWeight: FontWeight.w600,
                               fontSize: 30,
                             ),
+                            /*
                             textWidget(
                               isBottom: true,
                               isDark: false,
                               txt: ' $done / $total',
                               weight: 'r',
                               fontSize: 16,
-                            ),
+                            ),*/
                           ],
                         ),
                       ),
                       glassyIconBottomWidget(
                         context,
-                        projectController,
+                       // projectController,
                         index,
                         isDark,
                         isRtl,

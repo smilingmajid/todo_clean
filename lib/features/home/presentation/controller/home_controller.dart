@@ -15,9 +15,7 @@ class HomeController extends GetxController {
     loadProjects();
   }
 
-  void addProject(
-    String name, //, int count
-  ) async {
+  void addProject(String name ) async {
     
     int count = projects.length;
     final project = ProjectModel(
