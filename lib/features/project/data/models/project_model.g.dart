@@ -18,7 +18,7 @@ class ProjectModelAdapter extends TypeAdapter<ProjectModel> {
     };
     return ProjectModel(
       name: fields[0] as String,
-      colorValue: fields[1] as int,
+      colorValue: fields[1] == null ? 4280391411 : fields[1] as int,
     );
   }
 
