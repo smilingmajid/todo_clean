@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/glass_circle_widget.dart';
+import '../../../../core/widgets/glassy_icon_bottom_widget.dart';
 import '/features/home/presentation/controller/home_controller.dart';
 
 import '../../../../core/widgets/text_widget.dart';
@@ -85,9 +86,9 @@ Widget projectWidget(HomeController homeController, isDark, bool isRtl) {
                           ],
                         ),
                       ),
-                      glassyIconBottomWidget(
+                     glassyIconBottomWidget (
                         context,
-                       // projectController,
+                        homeController,
                         index,
                         isDark,
                         isRtl,

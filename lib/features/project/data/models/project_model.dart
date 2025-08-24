@@ -8,13 +8,10 @@ class ProjectModel extends HiveObject {
   @HiveField(0)
   final String name;
 
-  @HiveField(1)
+  @HiveField(1, defaultValue: 0xFF2196F3)
   final int colorValue;
 
-  ProjectModel({
-    required this.name,
-    required this.colorValue,
-  });
+  ProjectModel({required this.name, this.colorValue = 0xFF2196F3});
 
   Color get color => Color(colorValue);
 }
