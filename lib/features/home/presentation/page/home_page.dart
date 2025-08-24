@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_clean/core/widgets/text_widget.dart';
-
+import '../../../project/presentation/widget/project_widget.dart';
 import '../../../../controller/theme_controller.dart';
 import '../../../../core/theme/app_color.dart';
 import '../controller/home_controller.dart';
@@ -21,28 +21,25 @@ class HomePage extends StatelessWidget {
             themeController.isDark.value
                 ? AppColor().darkModeColors[0]
                 : AppColor().lightModeColors[0],
-        body: Column(
-          children: [
-            homePageHeaderWidget(
-              themeController.isDark.value,
-              onPressed: () {
-                themeController.changeTheme();
-              },
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: controller.projects.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: textWidget(
-                      isDark: themeController.isDark.value,
-                      txt: controller.projects[index].name,
-                    ),
-                  );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              homePageHeaderWidget(
+                themeController.isDark.value,
+                onPressed: () {
+                  themeController.changeTheme();
                 },
               ),
-            ),
-          ],
+              Expanded(
+                child: projectWidget(
+                  controller,
+                  themeController.isDark.value,
+                  false,
+                ),
+              ),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
