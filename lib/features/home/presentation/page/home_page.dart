@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
                 homePageHeaderWidget(
                   themeController.isDark.value,
                   onPressed: () {
-                    themeController.changeTheme();
+                    drawerController.handleMenuButtonPressed();
                   },
                 ),
                 Expanded(
