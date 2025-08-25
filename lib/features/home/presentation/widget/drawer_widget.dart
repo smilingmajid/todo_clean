@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../core/widgets/text_widget.dart';
 import '../../../translation/presentation/controller/translate_controller.dart';
+import '../../../translation/presentation/widgets/language_dropdown_widget.dart';
 import 'change_theme_widget.dart';
-
 
 Widget drawerWidget(
   TranslateController translateController,
@@ -20,9 +20,7 @@ Widget drawerWidget(
         end: Alignment.bottomRight,
         colors: [
           isDark ? Colors.black : Colors.white,
-          isDark
-              ? AppColor().darkModeColors[0]
-              : AppColor().lightModeColors[0],
+          isDark ? AppColor().darkModeColors[0] : AppColor().lightModeColors[0],
         ],
       ),
     ),
@@ -35,8 +33,8 @@ Widget drawerWidget(
             children: [
               changeThemeWidget(isDark, onPressed),
               Spacer(),
-
-              //flagDropdownWidget(languageController, isDark),
+              LanguageDropdownWidget(),
+           
             ],
           ),
           Center(
@@ -61,7 +59,7 @@ Widget drawerWidget(
             ),
           ),
           const SizedBox(height: 30),
-         /* Expanded(
+          /* Expanded(
             child: ListView.builder(
               itemCount: AppData().drawerItems.length,
               itemBuilder: (context, index) {
