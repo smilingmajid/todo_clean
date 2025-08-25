@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:iconsax/iconsax.dart';
 
-Widget changeThemeWidget(bool isDark, Function()? onPressed, {Function()? onPressed}) {
+Widget changeThemeWidget(bool isDark, Function()? onPressed, ) {
   return IconButton(
     onPressed: onPressed,
     icon: Icon(
