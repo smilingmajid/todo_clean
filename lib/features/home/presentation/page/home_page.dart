@@ -4,6 +4,7 @@ import 'package:todo_clean/core/widgets/text_widget.dart';
 import '../../../project/presentation/widget/project_widget.dart';
 import '../../../../controller/theme_controller.dart';
 import '../../../../core/theme/app_color.dart';
+import '../../../translation/presentation/controller/translate_controller.dart';
 import '../controller/home_controller.dart';
 import '../widget/home_page_header_widget.dart';
 
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
     final themeController = Get.find<ThemeController>();
-
+    bool isRtl = Get.find<TranslateController>().isRtl.value;
     return Obx(() {
       return Scaffold(
         backgroundColor:
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
                 child: projectWidget(
                   controller,
                   themeController.isDark.value,
-                  false,
+                  isRtl,
                 ),
               ),
             ],
