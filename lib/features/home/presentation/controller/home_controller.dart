@@ -22,7 +22,10 @@ class HomeController extends GetxController {
     int count = projects.length;
     final project = ProjectModel(
       name: name,
-      colorValue: ProjectColors.palette[count % ProjectColors.palette.length].value,
+      // ignore: deprecated_member_use
+      colorValue:
+          // ignore: deprecated_member_use
+          ProjectColors.palette[count % ProjectColors.palette.length].value,
     );
     await addProjectUseCase(project);
     projects.add(project);
