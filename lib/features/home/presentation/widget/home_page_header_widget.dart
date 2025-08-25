@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import '../../../translation/presentation/widgets/language_dropdown_widget.dart';
+import 'package:random_avatar/random_avatar.dart';
 import '../../../../core/widgets/text_widget.dart';
 
 Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
@@ -24,9 +24,9 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
         fontWeight: FontWeight.w500,
       ),
       Spacer(),
+
       // LanguageDropdown(),
-      LanguageDropdownWidget(),
-      //RandomAvatar('saytoonz', height: 50, width: 50),
+      RandomAvatar('saytoonz', height: 50, width: 50),
     ],
   );
 }
