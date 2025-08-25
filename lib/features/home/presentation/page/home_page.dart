@@ -29,7 +29,13 @@ class HomePage extends StatelessWidget {
         animateChildDecoration: true,
         rtlOpening: false,
         childDecoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
-        drawer: drawerWidget(translateController, themeController.isDark.value),
+        drawer: drawerWidget(
+          translateController,
+          themeController.isDark.value,
+          onPressed: () {
+            themeController.changeTheme();
+          },
+        ),
         child: Scaffold(
           backgroundColor:
               themeController.isDark.value
