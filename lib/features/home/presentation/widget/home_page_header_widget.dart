@@ -10,7 +10,8 @@ Widget homePageHeaderWidget(bool isDark, {Function()? onPressed}) {
       IconButton(
         onPressed: onPressed,
         icon: Icon(
-          isDark ? Iconsax.sun_1 : Iconsax.moon,
+          Iconsax.menu_1,
+          // isDark ? Iconsax.sun_1 : Iconsax.moon,
           color: isDark ? Colors.white : Colors.black,
         ),
       ),
