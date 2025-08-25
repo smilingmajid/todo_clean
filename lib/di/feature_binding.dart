@@ -14,6 +14,7 @@ import '../features/home/presentation/controller/home_controller.dart';
 import '../features/project/data/datasources/project_local_datasource.dart';
 import '../features/project/data/repositories/project_repository_impl.dart';
 import '../features/project/domin/usecase/add_project_usecase.dart';
+import '../features/project/domin/usecase/delete_project_usecase.dart';
 
 import '../features/show_todo/data/datasources/todo_local_datasource.dart'
     as show_ds;
@@ -40,7 +41,9 @@ class FeatureBinding extends Bindings {
     final projectBox = Hive.box<ProjectModel>('projects');
     final local = ProjectLocalDataSourceImpl(projectBox);
     final repository = ProjectRepositoryImpl(local);
-    final usecase = AddProjectUseCase(repository);
+
+    final addProjectUseCase = AddProjectUseCase(repository);
+    final deleteProjectUseCase = DeleteProjectUseCase(repository);
 
     Get.lazyPut(
       () => TranslateController(
@@ -50,7 +53,7 @@ class FeatureBinding extends Bindings {
       fenix: true,
     );
 
-    Get.put(HomeController(usecase));
+    Get.put(HomeController(addProjectUseCase, deleteProjectUseCase));
 
     Get.lazyPut(
       () => AddTodoController(AddTodoUseCase(AddTodoRepositoryImpl(addLocal))),
