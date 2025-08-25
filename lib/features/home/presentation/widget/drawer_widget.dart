@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../core/widgets/text_widget.dart';
 import '../../../translation/presentation/controller/translate_controller.dart';
+import 'change_theme_widget.dart';
 
 
 Widget drawerWidget(
@@ -32,7 +33,7 @@ Widget drawerWidget(
           const SizedBox(height: 20),
           Row(
             children: [
-             // changThemeWidget(isDark, onPressed),
+              changeThemeWidget(isDark, onPressed),
               Spacer(),
 
               //flagDropdownWidget(languageController, isDark),
