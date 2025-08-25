@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:todo_clean/controller/theme_controller.dart';
+import 'package:todo_clean/controller/drawer_controller.dart';
 import 'package:todo_clean/features/project/data/models/project_model.dart';
 
 import '../features/add_todo/data/datasource/todo_local_datasource.dart'
@@ -66,6 +67,7 @@ class FeatureBinding extends Bindings {
       ),
       fenix: true,
     );
+    Get.lazyPut(() => DrawerController(), fenix: true);
 
     Get.lazyPut(() => ThemeController(), fenix: true);
   }
