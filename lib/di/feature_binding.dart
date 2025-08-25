@@ -67,7 +67,7 @@ class FeatureBinding extends Bindings {
       ),
       fenix: true,
     );
-    Get.lazyPut(() => DrawerController(), fenix: true);
+    Get.lazyPut(() => DrawerrController(), fenix: true);
 
     Get.lazyPut(() => ThemeController(), fenix: true);
   }

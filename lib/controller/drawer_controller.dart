@@ -1,7 +1,7 @@
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
 
-class DrawerController extends GetxController {
+class DrawerrController extends GetxController {
   final advancedDrawerController = AdvancedDrawerController();
 
   void handleMenuButtonPressed() {
