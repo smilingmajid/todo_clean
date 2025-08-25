@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:todo_clean/core/theme/project_colors.dart';
 import '../../../project/data/models/project_model.dart';
 import '../../../project/domin/usecase/add_project_usecase.dart';
 import '../../../project/domin/usecase/delete_project_usecase.dart';
+import 'package:todo_clean/core/theme/project_colors.dart';
 
 class HomeController extends GetxController {
   final AddProjectUseCase addProjectUseCase;
@@ -22,16 +22,16 @@ class HomeController extends GetxController {
     int count = projects.length;
     final project = ProjectModel(
       name: name,
-      // ignore: deprecated_member_use
-      colorValue: ProjectColors.palette[count].value,
+      colorValue: ProjectColors.palette[count % ProjectColors.palette.length].value,
     );
     await addProjectUseCase(project);
     projects.add(project);
   }
 
-  void deleteProject(ProjectModel project) async {
+  void deleteProject(int index) async {
+    final project = projects[index];
     await deleteProjectUseCase(project);
-    projects.remove(project);
+    projects.removeAt(index);
   }
 
   void loadProjects() async {
