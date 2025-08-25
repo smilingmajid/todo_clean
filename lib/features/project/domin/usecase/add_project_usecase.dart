@@ -1,5 +1,6 @@
 import '../../data/models/project_model.dart';
-import '../../data/repositories/project_repository_impl.dart';
+
+import '../repositories/project_repository.dart';
 
 class AddProjectUseCase {
   final ProjectRepository repository;
