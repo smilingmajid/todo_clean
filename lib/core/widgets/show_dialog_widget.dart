@@ -58,7 +58,7 @@ Future showDialogWidget(
                       child: textWidget(
                           isDark: true, txt: "Cancel", fontSize: 14),
                     ),
-                    /*
+                    
                     TextButton(
                       onPressed: () {
                         homeController.deleteProject(index);
@@ -70,7 +70,7 @@ Future showDialogWidget(
                         fontSize: 14,
                         weight: "b",
                       ),
-                    ),*/
+                    ),
                   ],
                 )
               ],
