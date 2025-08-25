@@ -8,7 +8,7 @@ final Map<String, String> deDE = {
 
   'DrawerWidget.GitHub': 'GitHub',
   'DrawerWidget.Instagram': 'Instagram',
-  'DrawerWidget.Lindin': 'Linkedin',
+  'DrawerWidget.linkedinIn': 'Linkedin',
   'DrawerWidget.Telegram': 'Telegram',
   'DrawerWidget.YouTube': 'YouTube',
   'DrawerWidget.Name': 'Majid Ghasemy',

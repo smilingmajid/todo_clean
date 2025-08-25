@@ -8,7 +8,7 @@ final Map<String, String> arSA = {
 
   'DrawerWidget.GitHub': 'جيت هاب',
   'DrawerWidget.Instagram': 'إنستغرام',
-  'DrawerWidget.Lindin': 'لينكد إن',
+  'DrawerWidget.linkedinIn': 'لينكد إن',
   'DrawerWidget.Telegram': 'تيليجرام',
   'DrawerWidget.YouTube': 'يوتيوب',
   'DrawerWidget.Name': 'مجيد قاسمي',

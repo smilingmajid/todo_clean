@@ -11,7 +11,7 @@ class AppData {
     },
     {
       'icon': LineIcons.linkedinIn,
-      'title': 'DrawerWidget.Lindin'.tr,
+      'title': 'DrawerWidget.linkedinIn'.tr,
       'url': 'https://www.linkedin.com/in/smiling-majid/',
     },
     {

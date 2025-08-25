@@ -8,7 +8,7 @@ final Map<String, String> faIR = {
 
   'DrawerWidget.GitHub': 'گیت هاب',
   'DrawerWidget.Instagram': 'اینستاگرام',
-  'DrawerWidget.Lindin': 'لینکدین',
+  'DrawerWidget.linkedinIn': 'لینکدین',
   'DrawerWidget.Telegram': 'تلگرام',
   'DrawerWidget.YouTube': 'یوتیوب',
   'DrawerWidget.Name': 'مجید قاسمی',
