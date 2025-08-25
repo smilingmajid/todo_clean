@@ -59,7 +59,7 @@ Widget drawerWidget(
             ),
           ),
           const SizedBox(height: 30),
-          /* Expanded(
+           Expanded(
             child: ListView.builder(
               itemCount: AppData().drawerItems.length,
               itemBuilder: (context, index) {
@@ -89,7 +89,7 @@ Widget drawerWidget(
                 );
               },
             ),
-          ),*/
+          )
         ],
       ),
     ),
