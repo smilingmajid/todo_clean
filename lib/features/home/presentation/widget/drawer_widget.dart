@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../../core/data/app_data.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../core/widgets/text_widget.dart';
 import '../../../translation/presentation/controller/translate_controller.dart';
@@ -34,7 +36,6 @@ Widget drawerWidget(
               changeThemeWidget(isDark, onPressed),
               Spacer(),
               LanguageDropdownWidget(),
-           
             ],
           ),
           Center(
@@ -59,7 +60,7 @@ Widget drawerWidget(
             ),
           ),
           const SizedBox(height: 30),
-           Expanded(
+          Expanded(
             child: ListView.builder(
               itemCount: AppData().drawerItems.length,
               itemBuilder: (context, index) {
@@ -89,7 +90,7 @@ Widget drawerWidget(
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     ),
