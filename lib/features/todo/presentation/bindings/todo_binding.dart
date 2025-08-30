@@ -11,11 +11,11 @@ import 'package:hive/hive.dart';
 class TodoBinding extends Bindings {
   @override
   void dependencies() {
-    final box = Hive.box<TodoModel>('todos');
-    final datasource = TodoLocalDataSourceImpl(box);
-    final repo = TodoRepositoryImpl(datasource);
-    final usecase = AddTodoUseCase(repo);
-    Get.lazyPut(() => TodoController(usecase));
+    final boxtodo = Hive.box<TodoModel>('todos');
+    final datasourceTdod = TodoLocalDataSourceImpl(boxtodo);
+    final repo = TodoRepositoryImpl(datasourceTdod);
+    final usecaseTdo = AddTodoUseCase(repo);
+    Get.lazyPut(() => TodoController(usecaseTdo));
   }
 }
 

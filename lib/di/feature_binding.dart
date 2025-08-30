@@ -45,6 +45,7 @@ class FeatureBinding extends Bindings {
 
     final addProjectUseCase = AddProjectUseCase(repository);
     final deleteProjectUseCase = DeleteProjectUseCase(repository);
+    
 
     Get.lazyPut(
       () => TranslateController(
