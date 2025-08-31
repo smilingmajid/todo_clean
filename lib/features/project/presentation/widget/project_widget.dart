@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/glass_circle_widget.dart';
 import '../../../../core/widgets/glassy_icon_bottom_widget.dart';
-import '../../../todo/presentation/pages/todo_page.dart';
+import '../../../add_todo/presentation/pages/add_todo_page.dart';
 import '/features/home/presentation/controller/home_controller.dart';
 
 import '../../../../core/widgets/text_widget.dart';
@@ -33,7 +33,7 @@ Widget projectWidget(HomeController homeController, isDark, bool isRtl) {
                 await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TodoPage(),
+                    builder: (context) => AddTodoPage(),
                     // TaskScreen(project: selectedProject, isRtl: isRtl),
                   ),
                 );
